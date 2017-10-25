@@ -5,7 +5,6 @@
  */
 package com.cubett
 
-import kotlin.system.exitProcess
 import kotlinx.coroutines.experimental.*
 import com.cubett.util.Logger
 import com.cubett.view.TimerView
