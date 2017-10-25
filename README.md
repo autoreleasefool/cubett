@@ -18,3 +18,5 @@ cd cubett
 kotlinc com/cubett/ -include-runtime -d Cubett.jar
 java -jar Cubett.jar
 ```
+
+Or, alternatively, use the build/run script, `run.sh`, to build and run the app.

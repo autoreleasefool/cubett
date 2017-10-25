@@ -23,11 +23,14 @@ object Logger {
     /** Character to construct boxes from. */
     var boxCharacter = '%'
 
+    /** True to enable verbose logging. */
+    var verbose: Boolean = true
+
     /**
      * Clear all output.
      */
     fun clearScreen() {
-        print("$CLS$HOME")
+        // print("$CLS$HOME") // FIXME: is there a better way to clear the console without just pushing it up?
     }
 
     /**
@@ -62,6 +65,15 @@ object Logger {
         if (includeBottom) {
             printSeparator()
         }
+    }
+
+    /**
+     * Print a message if Logger is in verbose mode.
+     *
+     * @param msg the message to print
+     */
+    fun debug(msg: String?) {
+        if (verbose && msg != null) println(msg)
     }
 
 }
