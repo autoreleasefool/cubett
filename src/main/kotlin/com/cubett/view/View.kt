@@ -11,6 +11,16 @@ package com.cubett.view
 interface View {
 
     /**
+     * Indicate to the view that it is now the active view.
+     */
+    abstract fun makeActive()
+
+    /**
+     * Indicate to the view that it no longer the active view.
+     */
+    abstract fun makeInactive()
+
+    /**
      * Renders the view based on its current state.
      */
     abstract fun render()

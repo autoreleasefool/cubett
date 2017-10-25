@@ -1,0 +1,41 @@
+buildscript {
+  ext.kotlin_version = '1.1.51'
+
+  repositories {
+    mavenCentral()
+  }
+
+  dependencies {
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+  }
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'application'
+
+mainClassName = 'com.cubett.Cubett'
+
+defaultTasks 'run'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+  compile 'org.jetbrains.kotlinx:kotlinx-coroutines-core:0.19.2'
+}
+
+kotlin {
+  experimental {
+    coroutines 'enable'
+  }
+}
+
+run {
+  standardInput = System.in
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = "4.2.1"
+}
